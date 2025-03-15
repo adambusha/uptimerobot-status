@@ -1,0 +1,63 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "uptimerobot-status",
+  "title": "UptimeRobot Status",
+  "description": "Check UptimeRobot monitors.",
+  "icon": "uptimerobot-icon.png",
+  "author": "abusha",
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "index",
+      "title": "UptimeRobot",
+      "description": "Check the status of all monitors. If down monitors are found they will be listed first.",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "apiKey",
+      "title": "UptimeRobot API Key",
+      "description": "Your UptimeRobot API key (Main or Read-Only)",
+      "type": "password",
+      "required": true
+    },
+    {
+      "name": "debugMode",
+      "title": "Debug Mode",
+      "description": "Show detailed information about all your monitors",
+      "type": "checkbox",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "forceRefresh",
+      "title": "Force Refresh",
+      "description": "Ignore cached data and fetch fresh information from UptimeRobot",
+      "type": "checkbox",
+      "default": false,
+      "required": false
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.93.2",
+    "@raycast/utils": "^1.17.0",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "20.8.10",
+    "@types/react": "18.3.3",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "prepublishOnly": "echo \"\\n\\nIt seems like you are trying to publish the Raycast extension to npm.\\n\\nIf you did intend to publish it to npm, remove the \\`prepublishOnly\\` script and rerun \\`npm publish\\` again.\\nIf you wanted to publish it to the Raycast Store instead, use \\`npm run publish\\` instead.\\n\\n\" && exit 1",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
